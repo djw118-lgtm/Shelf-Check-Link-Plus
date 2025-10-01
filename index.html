@@ -1,1 +1,526 @@
+import React, { useState } from 'react';
+import { AlertCircle, CheckCircle, Clock, Package, Smartphone, Users, TrendingUp, Shield } from 'lucide-react';
 
+export default function InventoryLandingPage() {
+  const [showReserveForm, setShowReserveForm] = useState(false);
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Header */}
+      <header className="bg-white shadow-sm sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+          <div className="text-2xl font-bold text-blue-600">StoreTrack Pro</div>
+          <nav className="hidden md:flex gap-6">
+            <a href="#features" className="text-gray-600 hover:text-blue-600">Features</a>
+            <a href="#pricing" className="text-gray-600 hover:text-blue-600">Pricing</a>
+            <a href="#faq" className="text-gray-600 hover:text-blue-600">FAQ</a>
+          </nav>
+          <button 
+            onClick={() => setShowReserveForm(true)}
+            className="bg-green-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-600"
+          >
+            Reserve Your Spot
+          </button>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-5xl font-bold mb-6">Never Lose LINK Approval Again</h1>
+          <p className="text-2xl mb-8 text-blue-100">Stop throwing away $300+/month in expired products</p>
+          <p className="text-xl mb-8 text-blue-100">The inventory management system built specifically for convenience stores, gas stations, and liquor stores.</p>
+          <button 
+            onClick={() => setShowReserveForm(true)}
+            className="bg-green-500 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-green-600 shadow-lg"
+          >
+            Reserve Your Early Customer Spot - $1,500
+          </button>
+        </div>
+      </section>
+
+      {/* Problem Section */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-red-50 border-l-4 border-red-500 p-8 rounded-lg">
+            <h2 className="text-3xl font-bold text-red-700 mb-4">The $156,000 Mistake</h2>
+            <div className="text-lg text-gray-700 space-y-4">
+              <p>When a gas station on the South Side lost LINK approval for 100 days:</p>
+              <ul className="list-disc ml-6 space-y-2">
+                <li>Lost <span className="font-bold text-red-600">$52,000/month</span> in revenue</li>
+                <li>Had to lay off employees</li>
+                <li>Store was empty - customers went elsewhere</li>
+                <li>Took over 3 months to get re-approved</li>
+              </ul>
+              <p className="font-bold text-xl text-red-600 mt-6">This happens to stores every single day across Chicago.</p>
+              <p className="text-2xl font-bold">Are you next?</p>
+            </div>
+          </div>
+
+          <div className="mt-8 bg-orange-50 border-l-4 border-orange-500 p-8 rounded-lg">
+            <h2 className="text-2xl font-bold text-orange-700 mb-4">⚠️ LINK Requirements Getting STRICTER</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="font-bold text-lg mb-2">Current Requirements (2025)</h3>
+                <ul className="space-y-1 text-gray-700">
+                  <li>• 3 varieties per staple category</li>
+                  <li>• <strong>36 minimum food SKUs</strong></li>
+                  <li>• Perishable items in 2 categories</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-bold text-lg mb-2">Proposed Changes (2026)</h3>
+                <ul className="space-y-1 text-gray-700">
+                  <li>• 7 varieties per staple category</li>
+                  <li>• <strong className="text-orange-600">84 minimum food SKUs</strong></li>
+                  <li>• Perishable items in 3 categories</li>
+                </ul>
+              </div>
+            </div>
+            <p className="mt-4 font-bold text-orange-800">The bar is getting HIGHER. Can you stay compliant when requirements double?</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 mt-8">
+            <div className="bg-red-50 p-6 rounded-lg">
+              <h3 className="text-xl font-bold text-red-700 mb-3">Daily Losses</h3>
+              <ul className="space-y-2 text-gray-700">
+                <li className="flex justify-between">
+                  <span>Expired products thrown away:</span>
+                  <span className="font-bold text-red-600">$20-30/day</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Stockouts (no Coke on Saturday):</span>
+                  <span className="font-bold text-red-600">$50-100/day</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>If you lose LINK approval:</span>
+                  <span className="font-bold text-red-600">$1,700/day</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Walmart purchases (no returns):</span>
+                  <span className="font-bold text-red-600">Total loss</span>
+                </li>
+              </ul>
+            </div>
+            <div className="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
+              <h3 className="text-xl font-bold text-yellow-700 mb-3">The Walmart Problem</h3>
+              <p className="text-gray-700 mb-4">Many stores buy from Walmart/grocery stores to avoid minimums and get better prices.</p>
+              <p className="font-bold text-yellow-800">But there's NO CREDIT if products expire. Complete loss.</p>
+              <p className="text-gray-700 mt-4">Your employees aren't checking expiration dates when shopping. Products come back with 2 weeks left.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Preview - Color-Coded Mockups */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12">See It In Action</h2>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* LINK Compliance Mockup */}
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <h3 className="font-bold text-lg mb-4 text-blue-600">LINK Compliance Status</h3>
+              <div className="space-y-3">
+                <div className="bg-green-100 border-l-4 border-green-500 p-4 rounded">
+                  <div className="font-bold text-green-700">✓ COMPLIANT</div>
+                  <div className="text-sm mt-1">Food SKUs: 38/36</div>
+                </div>
+                <div className="text-xs space-y-1 text-gray-600">
+                  <div className="flex items-center gap-2">
+                    <span className="w-3 h-3 bg-yellow-400 rounded-full"></span>
+                    <span>90-day renewal alert</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-3 h-3 bg-orange-400 rounded-full"></span>
+                    <span>60-day alert</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-3 h-3 bg-red-500 rounded-full"></span>
+                    <span>30-day alert</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Expiration Alerts Mockup */}
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <h3 className="font-bold text-lg mb-4 text-orange-600">Expiration Alerts</h3>
+              <div className="space-y-2">
+                <div className="bg-red-100 border-l-4 border-red-500 p-3 rounded text-sm">
+                  <div className="font-bold text-red-700">2 DAYS</div>
+                  <div className="text-xs">8 Turkey sandwiches</div>
+                  <div className="text-xs text-red-600">Loss: $32</div>
+                </div>
+                <div className="bg-orange-100 border-l-4 border-orange-500 p-3 rounded text-sm">
+                  <div className="font-bold text-orange-700">5 DAYS</div>
+                  <div className="text-xs">15 Jay's chips</div>
+                  <div className="text-xs text-orange-600">Loss: $45</div>
+                </div>
+                <div className="bg-yellow-100 border-l-4 border-yellow-500 p-3 rounded text-sm">
+                  <div className="font-bold text-yellow-700">10 DAYS</div>
+                  <div className="text-xs">12 Diet Coke 6-packs</div>
+                  <div className="text-xs text-yellow-600">Loss: $48</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Inventory Status Mockup */}
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <h3 className="font-bold text-lg mb-4 text-purple-600">Inventory Status</h3>
+              <div className="space-y-2">
+                <div className="bg-red-50 border-l-4 border-red-500 p-3 rounded text-sm">
+                  <div className="font-bold">Coca-Cola 12oz</div>
+                  <div className="text-xs text-gray-600">8 units</div>
+                  <div className="text-xs text-red-600 font-bold">REORDER NOW</div>
+                </div>
+                <div className="bg-yellow-50 border-l-4 border-yellow-500 p-3 rounded text-sm">
+                  <div className="font-bold">Pepsi 12oz</div>
+                  <div className="text-xs text-gray-600">22 units</div>
+                  <div className="text-xs text-yellow-600 font-bold">ORDER SOON</div>
+                </div>
+                <div className="bg-green-50 border-l-4 border-green-500 p-3 rounded text-sm">
+                  <div className="font-bold">Mountain Dew</div>
+                  <div className="text-xs text-gray-600">45 units</div>
+                  <div className="text-xs text-green-600 font-bold">OK</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section id="pricing" className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12">Pricing</h2>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* After Launch */}
+            <div className="bg-white p-8 rounded-lg shadow-md border-2 border-gray-200">
+              <h3 className="text-2xl font-bold mb-4">After Launch Pricing</h3>
+              <div className="space-y-3 mb-6">
+                <div className="flex justify-between">
+                  <span>Setup Fee:</span>
+                  <span className="font-bold">$1,500</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Monthly Service:</span>
+                  <span className="font-bold">$299/month</span>
+                </div>
+                <div className="flex justify-between text-sm text-gray-600">
+                  <span>3-month minimum</span>
+                </div>
+                <hr />
+                <div className="flex justify-between text-xl font-bold">
+                  <span>First 3 months:</span>
+                  <span className="text-gray-600">$2,397</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Early Customer */}
+            <div className="bg-gradient-to-br from-green-500 to-green-600 text-white p-8 rounded-lg shadow-lg border-4 border-green-400 relative">
+              <div className="absolute -top-4 -right-4 bg-yellow-400 text-black px-4 py-2 rounded-full font-bold text-sm">
+                EARLY CUSTOMER
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Early Customer Pricing</h3>
+              <p className="mb-6 text-green-100">Available Now - Before Launch</p>
+              
+              <div className="bg-white text-gray-800 p-6 rounded-lg mb-6">
+                <div className="text-3xl font-bold text-green-600 mb-4">$1,500</div>
+                <div className="space-y-2 text-sm mb-4">
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                    <span>Complete setup - I scan all your SKUs</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                    <span>LINK compliance configuration</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                    <span>Staff training included</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                    <span>Early customer benefits</span>
+                  </div>
+                </div>
+                <div className="border-t pt-3 text-gray-600 text-sm">
+                  <p><strong>Monthly service:</strong> $299/month</p>
+                  <p className="text-xs mt-1">3-month minimum commitment</p>
+                </div>
+              </div>
+
+              <button 
+                onClick={() => setShowReserveForm(true)}
+                className="w-full bg-yellow-400 text-gray-800 py-4 rounded-lg font-bold text-lg hover:bg-yellow-300"
+              >
+                Reserve Your Spot Now
+              </button>
+              
+              <p className="text-xs text-green-100 mt-4 text-center">Talk to us about flexible payment options</p>
+            </div>
+          </div>
+
+          <div className="mt-12 bg-blue-50 p-8 rounded-lg border-l-4 border-blue-500">
+            <h3 className="text-xl font-bold mb-4">Payment Options</h3>
+            <ul className="space-y-2 text-gray-700">
+              <li>Pay in full: $1,500 today</li>
+              <li>Split payment: $750 today + $750 in 30 days</li>
+            </ul>
+            <p className="text-sm text-gray-600 mt-4">Setup begins after full payment received.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Detailed Features Section */}
+      <section id="features" className="py-16 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-4">Complete Feature List</h2>
+          <p className="text-center text-gray-600 mb-12">Everything included in your $299/month subscription</p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* LINK Compliance */}
+            <div className="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+              <h3 className="font-bold text-lg mb-3 text-green-700">LINK Compliance</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li>✓ Real-time compliance tracking</li>
+                <li>✓ Food vs non-food SKU percentages</li>
+                <li>✓ Perishable item monitoring</li>
+                <li>✓ State-specific requirements</li>
+                <li>✓ Renewal reminders (90/60/30 days)</li>
+                <li>✓ Pre-audit compliance reports</li>
+                <li>✓ New SKU compliance warnings</li>
+              </ul>
+            </div>
+
+            {/* Expiration Tracking */}
+            <div className="bg-orange-50 p-6 rounded-lg border-l-4 border-orange-500">
+              <h3 className="font-bold text-lg mb-3 text-orange-700">Expiration Tracking</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li>✓ Color-coded urgency alerts</li>
+                <li>✓ Weekly expiration notifications</li>
+                <li>✓ Potential loss calculations</li>
+                <li>✓ Historical waste tracking</li>
+                <li>✓ Monthly waste reports</li>
+                <li>✓ Date received logging</li>
+              </ul>
+            </div>
+
+            {/* Inventory Management */}
+            <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+              <h3 className="font-bold text-lg mb-3 text-blue-700">Inventory Management</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li>✓ Barcode scanning</li>
+                <li>✓ Real-time inventory counts</li>
+                <li>✓ Low stock alerts</li>
+                <li>✓ Reorder recommendations</li>
+                <li>✓ Quantity tracking per SKU</li>
+                <li>✓ Fast/slow product identification</li>
+                <li>✓ Delivery logging</li>
+              </ul>
+            </div>
+
+            {/* Walmart Tracking */}
+            <div className="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
+              <h3 className="font-bold text-lg mb-3 text-yellow-700">Walmart/Retail Purchases</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li>✓ No-return policy tracking</li>
+                <li>✓ Employee shopping control</li>
+                <li>✓ Over-purchase prevention</li>
+                <li>✓ Total loss risk warnings</li>
+              </ul>
+            </div>
+
+            {/* Reports */}
+            <div className="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-500">
+              <h3 className="font-bold text-lg mb-3 text-purple-700">Reporting & Analytics</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li>✓ Monthly waste reports</li>
+                <li>✓ Sales velocity tracking</li>
+                <li>✓ Best sellers identification</li>
+                <li>✓ Inventory value reports</li>
+                <li>✓ Compliance history</li>
+                <li>✓ Export data to CSV</li>
+              </ul>
+            </div>
+
+            {/* Platform & Support */}
+            <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-gray-500">
+              <h3 className="font-bold text-lg mb-3 text-gray-700">Platform & Support</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li>✓ Works on any smartphone</li>
+                <li>✓ Cloud-based, access anywhere</li>
+                <li>✓ Up to 3 store locations</li>
+                <li>✓ Up to 5 user accounts</li>
+                <li>✓ Phone & email support</li>
+                <li>✓ Video tutorials</li>
+                <li>✓ Free software updates</li>
+              </ul>
+            </div>
+
+            {/* Specialty Listings */}
+            <div className="bg-indigo-50 p-6 rounded-lg border-l-4 border-indigo-500">
+              <h3 className="font-bold text-lg mb-3 text-indigo-700">Public Specialty Listings</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li>✓ List rare/specialty items online</li>
+                <li>✓ Unique public page for your store</li>
+                <li>✓ Help customers find hard-to-find items</li>
+                <li>✓ Drive foot traffic to your store</li>
+                <li>✓ Perfect for clearance/slow-moving inventory</li>
+                <li>✓ QR code for in-store promotion</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-12 bg-green-50 border-l-4 border-green-500 p-8 rounded-lg">
+            <h3 className="text-xl font-bold mb-4">What's Included in Your $1,500 Setup:</h3>
+            <div className="grid md:grid-cols-2 gap-4 text-gray-700">
+              <div>
+                <ul className="space-y-2">
+                  <li>✓ Physical visit to your store</li>
+                  <li>✓ Scan ALL your existing SKUs</li>
+                  <li>✓ Enter current inventory quantities</li>
+                  <li>✓ Log expiration dates for all products</li>
+                </ul>
+              </div>
+              <div>
+                <ul className="space-y-2">
+                  <li>✓ Organize products into categories</li>
+                  <li>✓ Configure LINK compliance settings</li>
+                  <li>✓ Set up user accounts for staff</li>
+                  <li>✓ Train you and your team (30-60 min)</li>
+                </ul>
+              </div>
+            </div>
+            <p className="text-sm text-gray-600 mt-4">Setup takes 6-16 hours depending on store size. We do all the work.</p>
+          </div>
+
+          <div className="mt-8 bg-blue-50 border-l-4 border-blue-500 p-8 rounded-lg">
+            <h3 className="text-xl font-bold mb-4">Optional Add-Ons:</h3>
+            <ul className="space-y-2 text-gray-700">
+              <li>• Physical inventory audits: $500-750 per visit (when you need them)</li>
+              <li>• Additional locations beyond 3: $99/month each</li>
+              <li>• SMS/text alerts: $10/month (email alerts included)</li>
+              <li>• Additional users beyond 5: $10/month per user</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="py-16 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12">FAQ</h2>
+          
+          <div className="space-y-6">
+            <div className="bg-white p-6 rounded-lg shadow">
+              <h3 className="font-bold text-lg mb-2">When will this be ready?</h3>
+              <p className="text-gray-700">I'm collecting commitments now. Once I have 10-15 commitments, I begin building. Launch is 6-8 weeks after that. If you commit today, setup in 8-10 weeks.</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow">
+              <h3 className="font-bold text-lg mb-2">Why pay now if it's not ready?</h3>
+              <p className="text-gray-700 mb-2">Three reasons:</p>
+              <ol className="list-decimal ml-6 space-y-1 text-gray-700">
+                <li>Lock in early customer pricing (save $1,495)</li>
+                <li>Your money funds development</li>
+                <li>You get input while I'm building it</li>
+              </ol>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow">
+              <h3 className="font-bold text-lg mb-2">Can I get a refund?</h3>
+              <p className="text-gray-700"><strong>Before setup:</strong> Yes, 100% refund.</p>
+              <p className="text-gray-700 mt-2"><strong>After setup:</strong> No refunds, but cancel after paid period ends.</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow">
+              <h3 className="font-bold text-lg mb-2">Do I need special equipment?</h3>
+              <p className="text-gray-700">No. Works on any smartphone (iPhone or Android).</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow">
+              <h3 className="font-bold text-lg mb-2">What if I buy from Walmart?</h3>
+              <p className="text-gray-700">This system is <strong>PERFECT</strong> for you. Since Walmart doesn't take returns, you need accurate tracking. The system catches overbuying before it becomes total loss.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-16 px-4 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-6">Ready to Get Protected?</h2>
+          <p className="text-xl mb-8">$1,500 setup gets you started</p>
+          <p className="text-lg mb-8 text-blue-100">Then $299/month with 3-month minimum. Never lose LINK. Never throw away money.</p>
+          <button 
+            onClick={() => setShowReserveForm(true)}
+            className="bg-green-500 text-white px-12 py-4 rounded-lg text-xl font-semibold hover:bg-green-600 shadow-lg"
+          >
+            Reserve Your Spot Now
+          </button>
+          <p className="text-sm text-blue-200 mt-6">Early customers - talk to us about flexible payment options and special offers</p>
+        </div>
+      </section>
+
+      {/* Reserve Form Modal */}
+      {showReserveForm && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 overflow-y-auto">
+          <div className="bg-white rounded-lg p-8 max-w-md w-full my-8">
+            <h3 className="text-2xl font-bold mb-4">Reserve Your Early Customer Spot</h3>
+            <p className="text-gray-600 mb-6">Fill out this form and we'll contact you within 24 hours.</p>
+            
+            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <div>
+                <label className="block text-sm font-bold mb-1">Business Name</label>
+                <input type="text" className="w-full border border-gray-300 rounded px-3 py-2" required />
+              </div>
+              <div>
+                <label className="block text-sm font-bold mb-1">Owner Name</label>
+                <input type="text" className="w-full border border-gray-300 rounded px-3 py-2" required />
+              </div>
+              <div>
+                <label className="block text-sm font-bold mb-1">Phone</label>
+                <input type="tel" className="w-full border border-gray-300 rounded px-3 py-2" required />
+              </div>
+              <div>
+                <label className="block text-sm font-bold mb-1">Email</label>
+                <input type="email" className="w-full border border-gray-300 rounded px-3 py-2" required />
+              </div>
+              <div>
+                <label className="block text-sm font-bold mb-1">Store Address</label>
+                <input type="text" className="w-full border border-gray-300 rounded px-3 py-2" required />
+              </div>
+              <div>
+                <label className="block text-sm font-bold mb-1">Payment Preference</label>
+                <select className="w-full border border-gray-300 rounded px-3 py-2">
+                  <option>$1,500 full payment</option>
+                  <option>$750 + $750 split payment</option>
+                </select>
+              </div>
+              
+              <div className="flex gap-3 mt-6">
+                <button 
+                  type="button"
+                  onClick={() => setShowReserveForm(false)}
+                  className="flex-1 bg-gray-200 text-gray-800 py-3 rounded-lg font-semibold hover:bg-gray-300"
+                >
+                  Cancel
+                </button>
+                <button 
+                  type="submit"
+                  className="flex-1 bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-600"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
