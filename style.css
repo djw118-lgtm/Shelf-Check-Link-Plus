@@ -1,0 +1,18 @@
+body {font-family: Arial, sans-serif; margin:0; padding:0;}
+header {display:flex; justify-content:space-between; align-items:center; padding:1em; background:#fff; box-shadow:0 2px 4px rgba(0,0,0,0.1);}
+header .brand {font-weight:bold; color:#0066cc;}
+nav a {margin:0 1em; text-decoration:none; color:#333;}
+.btn {background:#28a745; color:#fff; padding:0.5em 1em; border:none; cursor:pointer;}
+.hero {padding:3em; text-align:center; color:#fff;}
+.gradient-blue {background:linear-gradient(90deg, #007BFF, #00C6FF);}
+.alert.red {background:#f8d7da; padding:1em; margin:1em;}
+.info {padding:2em; background:#f9f9f9;}
+.expiration {padding:2em; background:#fff3cd;}
+.expiration p {margin:0.5em 0;}
+.card {background:#e6ffe6; padding:2em; margin:2em auto; border-radius:8px; max-width:400px;}
+.card .price {font-size:1.5em; color:#28a745; font-weight:bold;}
+.card .checklist {list-style:none; padding:0;}
+.card .checklist li {margin:0.5em 0;}
+.btn-yellow {background:#ffc107; color:#000; padding:0.5em 1em; border:none; cursor:pointer;}
+footer.cta {text-align:center; padding:2em; color:#fff;}
+footer.gradient-blue {background:linear-gradient(90deg, #007BFF, #00C6FF);}
