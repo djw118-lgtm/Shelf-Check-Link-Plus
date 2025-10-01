@@ -1,2 +1,2 @@
-# Shelf-Check-Link-Plus-
+# Shelf-Check-Link-Plus+
 Inventory management system
