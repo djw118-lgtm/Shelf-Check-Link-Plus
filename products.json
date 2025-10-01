@@ -1,0 +1,17 @@
+[
+  {
+    "barcode": "049000050103",
+    "name": "Coca-Cola",
+    "size": "12 oz"
+  },
+  {
+    "barcode": "012000161155",
+    "name": "Pepsi",
+    "size": "12 oz"
+  },
+  {
+    "barcode": "012000809508",
+    "name": "Mountain Dew",
+    "size": "20 oz"
+  }
+]
