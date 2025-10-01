@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StoreTrack Pro • Shelf-Check-Link-Plus+</title>
+  <title>Shelf-Check-Link+</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Sticky Header -->
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
-      <div class="brand">StoreTrack Pro</div>
+      <div class="brand">Shelf-Check-Link+</div>
       <nav class="nav">
         <a href="#features">Features</a>
         <a href="#pricing">Pricing</a>
@@ -25,337 +25,68 @@
     <div class="container hero-inner">
       <h1>Never Lose LINK Approval Again</h1>
       <p class="subtitle">Stop throwing away $300+/month in expired products</p>
-      <p class="lede">
-        The inventory management system built specifically for convenience stores, gas stations, and liquor stores.
-      </p>
-      <button class="btn btn-green btn-lg" onclick="openReserve()">Reserve Your Early Customer Spot — $1,500</button>
-    </div>
-  </section>
-
-  <!-- Scanner Demo -->
-  <section id="scanner-demo" class="section">
-    <div class="container">
-      <h2>📦 Inventory Scanner Demo</h2>
-      <p class="muted">Walk to the cooler, scan a product, then enter quantity and expiration date. This simulates Phase 1 setup. Alerts are calculated below.</p>
-      <div class="scanner-controls">
-        <button id="startScanBtn" class="btn" onclick="startScanner()">Start Scanning</button>
-        <button id="stopScanBtn" class="btn btn-ghost" onclick="stopScanner()" disabled>Stop Scanning</button>
-      </div>
-      <div id="scanner" class="scanner"></div>
-
-      <div id="inventory" class="inventory">
-        <h3>Current Inventory</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Product</th>
-              <th>Code</th>
-              <th>Qty</th>
-              <th>Expiration</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody id="inventoryBody">
-            <!-- rows injected here -->
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- Problem Section -->
-  <section class="section bg-white">
-    <div class="container">
-      <div class="alert-box alert-red">
-        <h2>The $156,000 Mistake</h2>
-        <div class="content">
-          <p>When a gas station on the South Side lost LINK approval for 100 days:</p>
-          <ul>
-            <li>Lost <strong class="money">$52,000/month</strong> in revenue</li>
-            <li>Had to lay off employees</li>
-            <li>Store was empty — customers went elsewhere</li>
-            <li>Took over 3 months to get re-approved</li>
-          </ul>
-          <p class="bold red">This happens to stores every single day across Chicago.</p>
-          <p class="xl">Are you next?</p>
-        </div>
-      </div>
-
-      <div class="alert-box alert-orange mt">
-        <h2>⚠️ LINK Requirements Getting STRICTER</h2>
-        <div class="grid-2 gap">
-          <div class="card">
-            <h3>Current Requirements (2025)</h3>
-            <ul class="tight">
-              <li>• 3 varieties per staple category</li>
-              <li>• <strong>36 minimum food SKUs</strong></li>
-              <li>• Perishable items in 2 categories</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Proposed Changes (2026)</h3>
-            <ul class="tight">
-              <li>• 7 varieties per staple category</li>
-              <li>• <strong>84 minimum food SKUs</strong></li>
-              <li>• Perishable items in 3 categories</li>
-            </ul>
-          </div>
-        </div>
-        <p class="bold orange mt-sm">The bar is getting HIGHER. Can you stay compliant when requirements double?</p>
-      </div>
-
-      <div class="grid-2 gap mt">
-        <div class="card alert-soft-red">
-          <h3>Daily Losses</h3>
-          <ul class="kpi-list">
-            <li><span>Expired products thrown away:</span><span class="money red">$20–30/day</span></li>
-            <li><span>Stockouts (no Coke on Saturday):</span><span class="money red">$50–100/day</span></li>
-            <li><span>If you lose LINK approval:</span><span class="money red">$1,700/day</span></li>
-            <li><span>Walmart purchases (no returns):</span><span class="money red">Total loss</span></li>
-          </ul>
-        </div>
-        <div class="card alert-soft-yellow border-left-yellow">
-          <h3>The Walmart Problem</h3>
-          <p>Many stores buy from Walmart/grocery stores to avoid minimums and get better prices.</p>
-          <p class="bold">But there's NO CREDIT if products expire. Complete loss.</p>
-          <p>Your employees aren't checking expiration dates when shopping. Products come back with 2 weeks left.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- See It In Action -->
-  <section class="section bg-gray">
-    <div class="container">
-      <h2>See It In Action</h2>
-      <div class="grid-3 gap">
-        <div class="card">
-          <h3 class="blue">LINK Compliance Status</h3>
-          <div class="alert-soft-green border-left-green">
-            <div class="bold green">✓ COMPLIANT</div>
-            <div class="muted">Food SKUs: 38/36</div>
-          </div>
-          <div class="legend">
-            <div class="dot yellow"></div><span>90-day renewal alert</span>
-          </div>
-          <div class="legend">
-            <div class="dot orange"></div><span>60-day alert</span>
-          </div>
-          <div class="legend">
-            <div class="dot red"></div><span>30-day alert</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3 class="orange">Expiration Alerts</h3>
-          <div class="alert-line alert-red">
-            <div class="title">2 DAYS</div>
-            <div class="sub">8 Turkey sandwiches</div>
-            <div class="loss red">Loss: $32</div>
-          </div>
-          <div class="alert-line alert-orange">
-            <div class="title">5 DAYS</div>
-            <div class="sub">15 Jay's chips</div>
-            <div class="loss orange">Loss: $45</div>
-          </div>
-          <div class="alert-line alert-yellow">
-            <div class="title">10 DAYS</div>
-            <div class="sub">12 Diet Coke 6-packs</div>
-            <div class="loss yellow">Loss: $48</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3 class="purple">Inventory Status</h3>
-          <div class="status status-red">
-            <div class="name bold">Coca-Cola 12oz</div>
-            <div class="muted">8 units</div>
-            <div class="flag red bold">REORDER NOW</div>
-          </div>
-          <div class="status status-yellow">
-            <div class="name bold">Pepsi 12oz</div>
-            <div class="muted">22 units</div>
-            <div class="flag yellow bold">ORDER SOON</div>
-          </div>
-          <div class="status status-green">
-            <div class="name bold">Mountain Dew</div>
-            <div class="muted">45 units</div>
-            <div class="flag green bold">OK</div>
-          </div>
-        </div>
-      </div>
+      <p class="lede">The inventory management system built specifically for convenience stores, gas stations, and liquor stores.</p>
+      <button class="btn btn-green btn-lg" onclick="openReserve()">Reserve Your Early Customer Spot – $1,500</button>
     </div>
   </section>
 
   <!-- Pricing -->
   <section id="pricing" class="section bg-white">
     <div class="container">
-      <h2>Pricing</h2>
-      <div class="grid-2 gap">
+      <h2 class="section-title">Pricing</h2>
+
+      <div class="pricing-grid">
+        <!-- After Launch -->
         <div class="card bordered">
           <h3>After Launch Pricing</h3>
-          <div class="rows">
-            <div class="row"><span>Setup Fee:</span><span class="bold">$1,500</span></div>
-            <div class="row"><span>Monthly Service:</span><span class="bold">$299/month</span></div>
-            <div class="row small muted"><span>3-month minimum</span><span></span></div>
-            <hr/>
-            <div class="row xl bold"><span>First 3 months:</span><span class="muted">$2,397</span></div>
-          </div>
+          <div class="price-line"><span>Setup Fee:</span><span>$1,500</span></div>
+          <div class="price-line"><span>Monthly Service:</span><span>$299/month</span></div>
+          <p class="small">3-month minimum</p>
+          <hr>
+          <div class="price-total"><span>First 3 months:</span><span>$2,397</span></div>
         </div>
 
+        <!-- Early Customer -->
         <div class="card gradient-green bordered relative">
           <div class="badge">EARLY CUSTOMER</div>
           <h3 class="white">Early Customer Pricing</h3>
-          <p class="muted-white">Available Now — Before Launch</p>
+          <p class="muted-white">Available Now – Before Launch</p>
+
           <div class="card white-box">
             <div class="price">$1,500</div>
-            <ul class="checklist">
-              <li>✓ Complete setup — I scan all your SKUs</li>
-              <li>✓ LINK compliance configuration</li>
-              <li>✓ Staff training included</li>
-              <li>✓ Early customer benefits</li>
+            <ul class="checklist space-y-2 text-sm mb-4">
+              <li><span style="color:green;">&#10003;</span> Complete setup – I scan all your SKUs</li>
+              <li><span style="color:green;">&#10003;</span> LINK compliance configuration</li>
+              <li><span style="color:green;">&#10003;</span> Staff training included</li>
+              <li><span style="color:green;">&#10003;</span> Early customer benefits</li>
             </ul>
             <div class="muted small border-top">
               <p><strong>Monthly service:</strong> $299/month</p>
               <p class="small">3-month minimum commitment</p>
             </div>
           </div>
+
           <button class="btn btn-yellow full" onclick="openReserve()">Reserve Your Spot Now</button>
           <p class="muted-white small center">Talk to us about flexible payment options</p>
         </div>
       </div>
-
-      <div class="alert-box alert-blue mt">
-        <h3>Payment Options</h3>
-        <ul class="tight">
-          <li>Pay in full: $1,500 today</li>
-          <li>Split payment: $750 today + $750 in 30 days</li>
-        </ul>
-        <p class="small muted">Setup begins after full payment received.</p>
-      </div>
     </div>
   </section>
 
-  <!-- Detailed Features -->
+  <!-- Features -->
   <section id="features" class="section bg-white">
     <div class="container">
-      <h2>Complete Feature List</h2>
-      <p class="muted center">Everything included in your $299/month subscription</p>
+      <h2 class="section-title">Complete Feature List</h2>
+      <p class="subtitle">Everything included in your $299/month subscription</p>
 
-      <div class="grid-3 gap mt">
-        <div class="feature feature-green">
-          <h3>LINK Compliance</h3>
-          <ul>
-            <li>✓ Real-time compliance tracking</li>
-            <li>✓ Food vs non-food SKU percentages</li>
-            <li>✓ Perishable item monitoring</li>
-            <li>✓ State-specific requirements</li>
-            <li>✓ Renewal reminders (90/60/30 days)</li>
-            <li>✓ Pre-audit compliance reports</li>
-            <li>✓ New SKU compliance warnings</li>
-          </ul>
-        </div>
-
-        <div class="feature feature-orange">
-          <h3>Expiration Tracking</h3>
-          <ul>
-            <li>✓ Color-coded urgency alerts</li>
-            <li>✓ Weekly expiration notifications</li>
-            <li>✓ Potential loss calculations</li>
-            <li>✓ Historical waste tracking</li>
-            <li>✓ Monthly waste reports</li>
-            <li>✓ Date received logging</li>
-          </ul>
-        </div>
-
-        <div class="feature feature-blue">
-          <h3>Inventory Management</h3>
-          <ul>
-            <li>✓ Barcode scanning</li>
-            <li>✓ Real-time inventory counts</li>
-            <li>✓ Low stock alerts</li>
-            <li>✓ Reorder recommendations</li>
-            <li>✓ Quantity tracking per SKU</li>
-            <li>✓ Fast/slow product identification</li>
-            <li>✓ Delivery logging</li>
-          </ul>
-        </div>
-
-        <div class="feature feature-yellow">
-          <h3>Walmart/Retail Purchases</h3>
-          <ul>
-            <li>✓ No-return policy tracking</li>
-            <li>✓ Employee shopping control</li>
-            <li>✓ Over-purchase prevention</li>
-            <li>✓ Total loss risk warnings</li>
-          </ul>
-        </div>
-
-        <div class="feature feature-purple">
-          <h3>Reporting &amp; Analytics</h3>
-          <ul>
-            <li>✓ Monthly waste reports</li>
-            <li>✓ Sales velocity tracking</li>
-            <li>✓ Best sellers identification</li>
-            <li>✓ Inventory value reports</li>
-            <li>✓ Compliance history</li>
-            <li>✓ Export data to CSV</li>
-          </ul>
-        </div>
-
-        <div class="feature feature-gray">
-          <h3>Platform &amp; Support</h3>
-          <ul>
-            <li>✓ Works on any smartphone</li>
-            <li>✓ Cloud-based, access anywhere</li>
-            <li>✓ Up to 3 store locations</li>
-            <li>✓ Up to 5 user accounts</li>
-            <li>✓ Phone &amp; email support</li>
-            <li>✓ Video tutorials</li>
-            <li>✓ Free software updates</li>
-          </ul>
-        </div>
-
-        <div class="feature feature-indigo">
-          <h3>Public Specialty Listings</h3>
-          <ul>
-            <li>✓ List rare/specialty items online</li>
-            <li>✓ Unique public page for your store</li>
-            <li>✓ Help customers find hard-to-find items</li>
-            <li>✓ Drive foot traffic to your store</li>
-            <li>✓ Perfect for clearance/slow-moving inventory</li>
-            <li>✓ QR code for in-store promotion</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="alert-box alert-green mt">
-        <h3>What's Included in Your $1,500 Setup:</h3>
-        <div class="grid-2 gap">
-          <ul class="tight">
-            <li>✓ Physical visit to your store</li>
-            <li>✓ Scan ALL your existing SKUs</li>
-            <li>✓ Enter current inventory quantities</li>
-            <li>✓ Log expiration dates for all products</li>
-          </ul>
-          <ul class="tight">
-            <li>✓ Organize products into categories</li>
-            <li>✓ Configure LINK compliance settings</li>
-            <li>✓ Set up user accounts for staff</li>
-            <li>✓ Train you and your team (30–60 min)</li>
-          </ul>
-        </div>
-        <p class="small muted mt-sm">Setup takes 6–16 hours depending on store size. We do all the work.</p>
-      </div>
-
-      <div class="alert-box alert-blue mt">
-        <h3>Optional Add-Ons:</h3>
-        <ul class="tight">
-          <li>• Physical inventory audits: $500–750 per visit (when you need them)</li>
-          <li>• Additional locations beyond 3: $99/month each</li>
-          <li>• SMS/text alerts: $10/month (email alerts included)</li>
-          <li>• Additional users beyond 5: $10/month per user</li>
-        </ul>
+      <div class="features-grid">
+        <div class="card">✓ Real-time compliance tracking</div>
+        <div class="card">✓ Expiration tracking & alerts</div>
+        <div class="card">✓ Inventory management</div>
+        <div class="card">✓ Walmart/retail purchases logging</div>
+        <div class="card">✓ Reporting & analytics</div>
+        <div class="card">✓ Platform & support</div>
+        <div class="card">✓ Public specialty listings</div>
       </div>
     </div>
   </section>
@@ -363,204 +94,23 @@
   <!-- FAQ -->
   <section id="faq" class="section bg-gray">
     <div class="container">
-      <h2>FAQ</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <h3>When will this be ready?</h3>
-          <p>I'm collecting commitments now. Once I have 10–15 commitments, I begin building. Launch is 6–8 weeks after that. If you commit today, setup in 8–10 weeks.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Why pay now if it's not ready?</h3>
-          <p>Three reasons:</p>
-          <ol>
-            <li>Lock in early customer pricing (save $1,495)</li>
-            <li>Your money funds development</li>
-            <li>You get input while I'm building it</li>
-          </ol>
-        </div>
-        <div class="faq-item">
-          <h3>Can I get a refund?</h3>
-          <p><strong>Before setup:</strong> Yes, 100% refund.</p>
-          <p><strong>After setup:</strong> No refunds, but cancel after paid period ends.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Do I need special equipment?</h3>
-          <p>No. Works on any smartphone (iPhone or Android).</p>
-        </div>
-        <div class="faq-item">
-          <h3>What if I buy from Walmart?</h3>
-          <p>This system is <strong>PERFECT</strong> for you. Since Walmart doesn't take returns, you need accurate tracking. The system catches overbuying before it becomes total loss.</p>
-        </div>
+      <h2 class="section-title">FAQ</h2>
+      <div class="faq-item">
+        <h3>When will this be ready?</h3>
+        <p>Once I have 10-15 commitments, I begin building. Launch is 6–8 weeks after that.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Why pay now if it's not ready?</h3>
+        <p>Lock in early customer pricing, your money funds development, and you get input while I'm building it.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do I need special equipment?</h3>
+        <p>No. Works on any smartphone (iPhone or Android).</p>
       </div>
     </div>
   </section>
 
-  <!-- Final CTA -->
-  <section class="section gradient-blue final-cta">
-    <div class="container center">
-      <h2>Ready to Get Protected?</h2>
-      <p class="subtitle">$1,500 setup gets you started</p>
-      <p class="lede">Then $299/month with 3-month minimum. Never lose LINK. Never throw away money.</p>
-      <button class="btn btn-green btn-lg" onclick="openReserve()">Reserve Your Spot Now</button>
-      <p class="muted-white small mt-sm">Early customers — talk to us about flexible payment options and special offers</p>
-    </div>
-  </section>
-
-  <!-- Reserve Modal -->
-  <div id="reserveModal" class="modal hidden" aria-hidden="true">
-    <div class="modal-backdrop" onclick="closeReserve()"></div>
-    <div class="modal-dialog">
-      <h3>Reserve Your Early Customer Spot</h3>
-      <p class="muted">Fill out this form and we'll contact you within 24 hours.</p>
-      <form onsubmit="event.preventDefault(); closeReserve(); alert('Submitted!');">
-        <label>Business Name<input type="text" required /></label>
-        <label>Owner Name<input type="text" required /></label>
-        <label>Phone<input type="tel" required /></label>
-        <label>Email<input type="email" required /></label>
-        <label>Store Address<input type="text" required /></label>
-        <label>Payment Preference
-          <select>
-            <option>$1,500 full payment</option>
-            <option>$750 + $750 split payment</option>
-          </select>
-        </label>
-        <div class="modal-actions">
-          <button type="button" class="btn btn-ghost" onclick="closeReserve()">Cancel</button>
-          <button type="submit" class="btn btn-green">Submit</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
   <!-- Scripts -->
-  <script src="https://unpkg.com/html5-qrcode"></script>
-  <script>
-    // ---------- Modal ----------
-    function openReserve(){ document.getElementById('reserveModal').classList.remove('hidden'); }
-    function closeReserve(){ document.getElementById('reserveModal').classList.add('hidden'); }
-
-    // ---------- Scanner & Inventory ----------
-    let html5Scanner = null;
-    const inventory = []; // { code, name, qty, expiration: Date }
-
-    function startScanner(){
-      if (html5Scanner) return;
-      const el = document.getElementById('scanner');
-      html5Scanner = new Html5Qrcode(el.id);
-      document.getElementById('startScanBtn').disabled = true;
-      document.getElementById('stopScanBtn').disabled = false;
-
-      html5Scanner.start(
-        { facingMode: 'environment' },
-        { fps: 10, qrbox: 280 },
-        onScanSuccess,
-        (err) => {}
-      ).catch(err => {
-        console.error('Scanner start error:', err);
-        alert('Unable to start camera. Check permissions.');
-        stopScanner();
-      });
-    }
-
-    function stopScanner(){
-      if(!html5Scanner) return;
-      html5Scanner.stop().then(()=>{
-        html5Scanner.clear();
-        html5Scanner = null;
-        document.getElementById('startScanBtn').disabled = false;
-        document.getElementById('stopScanBtn').disabled = true;
-      });
-    }
-
-    function onScanSuccess(decodedText){
-      // Prompt sequence: product name -> qty -> expiration (flexible formats like "January 10, 2026" or "01-10-2026")
-      const name = prompt('Enter product name (e.g., Coke 12oz):', '');
-      if (name === null) return;
-
-      let qty = prompt('Enter quantity:', '');
-      if (qty === null) return;
-      qty = String(qty).trim();
-      if (!/^\d+$/.test(qty)) { alert('Quantity must be a whole number.'); return; }
-      qty = parseInt(qty, 10);
-
-      const expInput = prompt('Enter expiration date (e.g., January 10, 2026 OR 01-10-2026 OR 1/10/2026):', '');
-      if (expInput === null) return;
-      const expDate = parseDateFlexible(expInput);
-      if (!expDate) { alert('Could not understand that date. Please try formats like "January 10, 2026" or "01-10-2026".'); return; }
-
-      inventory.push({ code: decodedText, name, qty, expiration: expDate });
-      renderInventory();
-    }
-
-    function parseDateFlexible(input){
-      const s = String(input).trim();
-
-      // 1) Month name, e.g., "January 10, 2026" (let Date.parse handle)
-      const nameParsed = Date.parse(s);
-      if (!isNaN(nameParsed)) return new Date(nameParsed);
-
-      // 2) MM-DD-YYYY or MM/DD/YYYY
-      let m = s.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})$/);
-      if (m){
-        const mm = parseInt(m[1],10)-1; const dd = parseInt(m[2],10); const yyyy = parseInt(m[3],10);
-        const d = new Date(yyyy, mm, dd);
-        if (d && d.getFullYear()===yyyy && d.getMonth()===mm && d.getDate()===dd) return d;
-      }
-
-      // 3) YYYY-MM-DD
-      m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/);
-      if (m){
-        const yyyy = parseInt(m[1],10); const mm = parseInt(m[2],10)-1; const dd = parseInt(m[3],10);
-        const d = new Date(yyyy, mm, dd);
-        if (d && d.getFullYear()===yyyy && d.getMonth()===mm && d.getDate()===dd) return d;
-      }
-
-      // 4) Fallback: try Date constructor (browser locale)
-      const d = new Date(s);
-      if (!isNaN(d.getTime())) return d;
-
-      return null;
-    }
-
-    function renderInventory(){
-      const tbody = document.getElementById('inventoryBody');
-      tbody.innerHTML = '';
-
-      const today = new Date();
-      for (const item of inventory){
-        const daysLeft = Math.ceil((item.expiration - today) / (1000*60*60*24));
-        let status = '';
-        let cls = '';
-
-        if (daysLeft < 0){ status = 'Expired'; cls = 'chip chip-red'; }
-        else if (daysLeft <= 7){ status = daysLeft + ' days — markdown soon'; cls = 'chip chip-yellow'; }
-        else { status = daysLeft + ' days (Fresh)'; cls = 'chip chip-green'; }
-
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-          <td>${escapeHtml(item.name)}</td>
-          <td class="muted">${escapeHtml(item.code)}</td>
-          <td>${item.qty}</td>
-          <td>${formatDateUS(item.expiration)}</td>
-          <td><span class="${cls}">${status}</span></td>
-        `;
-        tbody.appendChild(tr);
-      }
-    }
-
-    function formatDateUS(d){
-      try {
-        return d.toLocaleDateString('en-US', { month:'long', day:'numeric', year:'numeric' });
-      } catch(e){
-        return d.toISOString().slice(0,10);
-      }
-    }
-
-    function escapeHtml(str){
-      return String(str).replace(/[&<>"']/g, s => ({
-        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
-      })[s]);
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
